@@ -1,8 +1,8 @@
 const express = require("express");
 const routes = express.Router();
-const VideoController = require("./controlers/VideoController");
-const VideoMiddleware = require("./middlewares/VideoMiddleware");
 
+const VideoController = require("./controllers/VideoController");
+const VideoMiddleware = require("./middlewares/VideoMiddleware");
 
 routes.get("/videos", VideoController.index);
 
@@ -17,6 +17,5 @@ routes.patch(
   VideoMiddleware.getVideo,
   VideoController.updateLike
 );
-
 
 module.exports = routes;
